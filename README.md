@@ -5,6 +5,9 @@
 |**Planejamento de Tarefas**|
 |---------------------------|--|
 |                           |  |
+|13/05|27/05  | 27/05  |
+|---|--|--|
+|Entrega do projeto (Descrição completa da sua ideia ou problema a ser resolvido, escopo total e daquilo que você pretende desenvolver na disciplina)  | Avaliação do desenvolvimento do projeto (espera-se pelo menos 50%) |Entrega final do projeto|  
 |||
 
  - [ ] **Pesquisa**
