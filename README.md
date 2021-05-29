@@ -72,7 +72,7 @@ empresas rodoviários.
 
 **Conclusões Finais**
  - [ ] **Quanto tempo durará?**
-* 21 dias
+* 28 dias
 - [ ] **Quanto esforço será exigido?**
 * Máximo possível (3h diárias)
 - [ ] **Quantas pessoas estarão envolvidas?**
