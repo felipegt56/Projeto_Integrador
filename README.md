@@ -8,7 +8,7 @@
  - [ ] **Pesquisa**: 
 * Setor de transporte rodoviário, mais precisamente de transporte de pessoas. 
  - [ ] **Estimativa**:
-* 21 dias para entrega do projeto final
+* 28 dias para entrega do projeto final
   
  - [ ] **Determinação de Prazos**:
 * 13/05/2021 a 10/06/2021
@@ -85,7 +85,7 @@ empresas rodoviários.
 
 ## Cronograma
 
-|13/05|27/05  | 27/05  |
+|13/05|03/06  | 10/06  |
 |---|--|--|
 |Entrega do projeto (Descrição completa da sua ideia ou problema a ser resolvido, escopo total e daquilo que você pretende desenvolver na disciplina)  | Avaliação do desenvolvimento do projeto (espera-se pelo menos 50%) |Entrega final do projeto|  
 |||
