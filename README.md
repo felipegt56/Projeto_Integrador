@@ -11,7 +11,7 @@
 * 21 dias para entrega do projeto final
   
  - [ ] **Determinação de Prazos**:
-* 13/05/2021 a 03/06/2021
+* 13/05/2021 a 10/06/2021
 
 **Atividades Associadas**
 
@@ -68,7 +68,7 @@ empresas rodoviários.
 **Duração do Uso** 
 * Todos os dias
 **Data de Entrega**
-* 03/06
+* 10/06
 
 **Conclusões Finais**
  - [ ] **Quanto tempo durará?**
