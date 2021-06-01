@@ -1,4 +1,4 @@
-from fastapi import APIRouter, status, Depends
+from fastapi import APIRouter, status, Depends, HTTPException
 from typing import List
 from sqlalchemy.orm import Session
 from src.schema.schemas import Empresa
@@ -24,9 +24,18 @@ def listar_empresas(session: Session = Depends(get_db)):
 def atualizar_empresa(id: int, empresa: Empresa, session: Session = Depends(get_db)):
     RepositorioEmpresa(session).editar(id, empresa)
     empresa.id = id
+    empresa_localizado = RepositorioEmpresa(session).buscarPorId(id)
+    if not empresa_localizado:
+        raise HTTPException(
+            status_code=status.HTTP_404_NOT_FOUND, detail=f'Empresa com o ID {id} não localizado')
     return empresa
 
 @router.delete('/empresas/{id}')
 def remover_empresa(id: int, session: Session = Depends(get_db)):
+    empresa_localizado = RepositorioEmpresa(session).buscarPorId(id)
+    if not empresa_localizado:
+        raise HTTPException(
+            status_code=status.HTTP_404_NOT_FOUND, detail=f'Empresa com o ID {id} não localizado')
+    
     RepositorioEmpresa(session).remover(id)
-    return {"msg": "Empresa removida com sucesso"}
+    return {"msg": "Removido com sucesso"}
