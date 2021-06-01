@@ -1,5 +1,5 @@
 from sqlalchemy import select, delete,update
-from sqlalchemy.orm import Session
+from sqlalchemy.orm import Session, query
 from src.schema import schemas
 from src.infra.sqlalchemy.models import models
 
@@ -17,9 +17,9 @@ class RepositorioEmpresa():
         return empresa_db
 
     def listar(self):
-        stmt = select(models.Empresa)
-        empresa = self.session.execute(stmt).scalars().all()
-        return empresa
+        query = select(models.Empresa)
+        empresas = self.session.execute(query).scalars().all()
+        return empresas
 
     def editar(self, id: int, empresa: schemas.Empresa):
         update_stmt = update(models.Empresa).where(
@@ -29,6 +29,11 @@ class RepositorioEmpresa():
         
         self.session.execute(update_stmt)
         self.session.commit()
+
+    def buscarPorId(self, id: int):
+        consulta = select(models.Empresa).where(models.Empresa.id == id)
+        empresas = self.session.execute(consulta).first()
+        return empresas
 
     def remover(self, id: int):
         delete_stmt = delete(models.Empresa).where(
