@@ -1,8 +1,8 @@
-"""nova revisao
+"""novos intens corrigidos e alterados
 
-Revision ID: e56878197b56
-Revises: 2fc6b5d31ca4
-Create Date: 2021-05-25 20:03:25.460554
+Revision ID: 3b7ad60f6fb5
+Revises: 
+Create Date: 2021-06-01 18:15:15.867607
 
 """
 from alembic import op
@@ -10,8 +10,8 @@ import sqlalchemy as sa
 
 
 # revision identifiers, used by Alembic.
-revision = 'e56878197b56'
-down_revision = '2fc6b5d31ca4'
+revision = '3b7ad60f6fb5'
+down_revision = None
 branch_labels = None
 depends_on = None
 
