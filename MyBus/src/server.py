@@ -14,11 +14,11 @@ app.add_middleware(CORSMiddleware,
                     allow_methods=["*"],
                     allow_headers=["*"],)
 
-# Rotas Usuário
+# Rotas do  Usuário
 app.include_router(rotas_usuario.router)
 
-# Rotas Empresa
+# Rotas  da Empresa
 app.include_router(rotas_empresa.router)
 
-# Rotas Passagem
+# Rotas  da Passagem
 app.include_router(rotas_passagem.router)
