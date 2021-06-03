@@ -24,13 +24,6 @@ class Passagem(Base):
     
     usuario = relationship('Usuario', back_populates='passagens')
 
-class PassagemSimples(Base):
-    __tablename__ = 'passagemsimples'
-
-    id = Column(Integer, primary_key=True, index=True)
-    embarque = Column(String)
-    desembarque = Column(String)
-
 class Empresa(Base):
     __tablename__ = 'empresa'
 
