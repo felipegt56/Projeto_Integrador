@@ -9,17 +9,6 @@ class PassagemSimples(BaseModel):
     class Config:
         orm_mode = True
 
-class Usuario(BaseModel):
-    id: Optional[int] = None
-    nome: str
-    idade: int
-    cpf: str
-    telefone: str
-    passagens: List[PassagemSimples] = []
-
-    class Config:
-        orm_mode = True
-
 class UsuarioSimples(BaseModel):
     id: Optional[int] = None
     nome: str
@@ -36,6 +25,17 @@ class Passagem(BaseModel):
     dia_mes: str
     usuario_id: Optional[int]
     usuario: Optional[UsuarioSimples]
+    
+    class Config:
+        orm_mode = True
+
+class Usuario(BaseModel):
+    id: Optional[int] = None
+    nome: str
+    idade: int
+    cpf: str
+    telefone: str
+    passagens: List[PassagemSimples] = []
 
     class Config:
         orm_mode = True
@@ -43,7 +43,9 @@ class Passagem(BaseModel):
 class Empresa(BaseModel):
     id: Optional[int] = None
     nome: str
-    cnpj: str
+    de: str
+    para: str
+    valor: float
 
     class Config:
         orm_mode = True
