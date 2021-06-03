@@ -20,8 +20,8 @@ class RepositorioUsuario():
         return usuario_bd
 
     def listar(self):
-        query = select(models.Usuario)
-        usuarios = self.session.execute(query).scalars().all()
+        stmt = select(models.Usuario)
+        usuarios = self.session.execute(stmt).scalars().all()
         return usuarios
 
     def editar(self, id: int, usuario: schemas.Usuario):
@@ -34,8 +34,8 @@ class RepositorioUsuario():
         self.session.commit()
     
     def buscarPorId(self, id: int):
-        consulta = select(models.Usuario).where(models.Usuario.id == id)
-        usuarios = self.session.execute(consulta).first()
+        query = select(models.Usuario).where(models.Usuario.id == id)
+        usuarios = self.session.execute(query).scalars().first()
         return usuarios
     
     def remover(self, id: int):

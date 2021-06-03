@@ -1,8 +1,7 @@
-from sqlalchemy import select, delete,update
+from sqlalchemy import select, delete, update
 from sqlalchemy.orm import Session, query
 from src.schema import schemas
 from src.infra.sqlalchemy.models import models
-
 
 class RepositorioPassagem():
 
@@ -19,15 +18,20 @@ class RepositorioPassagem():
         self.session.refresh(db_passagem)
         return db_passagem
 
-    def listar(self):
+    def listar_compradas(self):
         query = select(models.Passagem)
         passagens = self.session.execute(query).scalars().all()
         return passagens
     
     def passagemPorId(self, id: int):
-        consulta = select(models.Passagem).where(models.Passagem.id == id)
-        passagens = self.session.execute(consulta).first()
+        query = select(models.Passagem).where(models.Passagem.id == id)
+        passagens = self.session.execute(query).scalars().first()
         return passagens
+    
+    def listar_minhas_passagens_por_usuario_id(self, user_id: int):
+        localizar_usuario = select(models.Passagem).where(models.Passagem.usuario_id == user_id)
+        resultado = self.session.execute(localizar_usuario).scalars().all()
+        return resultado
 
     def remover(self, id: int):
         delete_stmt = delete(models.Passagem).where(

@@ -10,7 +10,10 @@ class RepositorioEmpresa():
 
     def cadastrar(self, empresa: schemas.Empresa):
         empresa_db = models.Empresa(nome=empresa.nome,
-                                    cnpj=empresa.cnpj)
+                                    de=empresa.de,
+                                    para=empresa.para,
+                                    valor=empresa.valor
+                                    )
         self.session.add(empresa_db)
         self.session.commit()
         self.session.refresh(empresa_db)
@@ -21,19 +24,21 @@ class RepositorioEmpresa():
         empresas = self.session.execute(query).scalars().all()
         return empresas
 
+    def buscarPorId(self, id: int):
+        query = select(models.Empresa).where(models.Empresa.id == id)
+        empresas = self.session.execute(query).scalars().first()
+        return empresas
+
     def editar(self, id: int, empresa: schemas.Empresa):
         update_stmt = update(models.Empresa).where(
-            models.Empresa.id == id).values(nome=empresa.nome,
-                                            cnpj=empresa.cnpj,
+            models.Empresa.id == id).values(
+                                            nome=empresa.nome,
+                                            de=empresa.de,
+                                            para=empresa.para,
+                                            valor=empresa.valor
                                             )
-        
         self.session.execute(update_stmt)
         self.session.commit()
-
-    def buscarPorId(self, id: int):
-        consulta = select(models.Empresa).where(models.Empresa.id == id)
-        empresas = self.session.execute(consulta).first()
-        return empresas
 
     def remover(self, id: int):
         delete_stmt = delete(models.Empresa).where(
