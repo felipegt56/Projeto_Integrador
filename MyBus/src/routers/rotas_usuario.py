@@ -20,6 +20,14 @@ def listar_usuario(session: Session = Depends(get_db)):
     usuarios = RepositorioUsuario(session).listar()
     return usuarios
 
+@router.get('/usuario/{id}')
+def Buscar_id(id: int, session: Session = Depends(get_db)):
+    usuario_localizado = RepositorioUsuario(session).buscarPorId(id)
+    if not usuario_localizado:
+        raise HTTPException(
+            status_code=status.HTTP_404_NOT_FOUND, detail=f'Usuário com o ID {id} não localizado')
+    return usuario_localizado
+
 @router.put('/usuarios/{id}', response_model=UsuarioSimples)
 def atualizar_usuario(id: int, usuario: Usuario, session: Session = Depends(get_db)):
     RepositorioUsuario(session).editar(id, usuario)
