@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+        <script src="menu.js"></script>
+        <link rel="stylesheet" href="index.css">
+        <title>My Bus - Página Principal </title>
+</head>
+<body>
+    <div class="menu-overlay"></div>
+    <a href="#" class="menu-open">Open Menu</a>
+
+    <div class="menu">
+    <a href="#" class="menu-close">×</a> 
+    <ul>
+            <li><a href="http://localhost:5500/public/menu.html" target="_blank" rel="nofollow">Home</a></li>
+            <li><a href="http://localhost:5500/public/lista_usuario.html" target="_blank" rel="nofollow">Usuários Cadastrado</a></li>
+            <li><a href="#">Comprar passagens</a>
+                <ul>
+                    <li><a href="http://localhost:5500/public/passagens.html" target="_blank" rel="nofollow" >Realizar Vendas</a></li>
+                    <li><a href="http://localhost:5500/public/passagens.html" target="_blank" rel="nofollow">Listar Vendas</a></li>
+                </ul>
+            </li>
+    </ul> 
+    </div>
+    <h2 id="titulo-cadastrar">Cadastrar Usuário</h2>
+    <form id="form-cadastrar">
+        <div><label for="nome" class="requerido">Nome:</label></div>
+        <br>
+        <div><input type="name" required="requerido" placeholder="Digite seu nome" class="caixa" id="nome"></div> 
+        <br>          
+        <div><label for="idade" class="requerido">Idade:</label></div>  
+        <br>  
+        <div><input type="number" required="requerido" placeholder="Digite sua idade" class="caixa" id="idade"></div> 
+        <br>   
+        <div><label for="cpf" class="requerido">CPF:</label></div>
+        <br>    
+        <div><input type="text" required="requerido" placeholder="cpf" class="caixa" id="cpf"></div>    
+        <br>
+        <div><label for="telefone" class="requerido">Telefone:</label></div>
+        <br>
+        <div><input type="text" required="requerido" placeholder="telefone" class="caixa" id="telefone"></div>
+        <br>
+        <input type="submit" value="Cadastrar" id="bota-cadastrar">
+        <a href="http://localhost:5500/public/lista_usuario.html"><input type="submit" value="Voltar" id="bota-voltar"></a>           
+    </form>
+    <footer>
+        <div class="rodape">
+            © 2021 - My Bus. Todos os Direitos Reservados<br>
+            <a href="https://github.com/felipegt56">Github - João Felipe</a>
+        </div>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+        <script src="lista_usuario.js" defer></script>
+        <link rel="stylesheet" href="index.css">
+        <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css">
+        <title>My Bus - Usuário Cadastrado</title>
+</head>
+<body>
+    <div>
+        <nav class="menu">
+            <ul>
+                <li><a href="http://localhost:5500/public/menu.html">Cadastrar Usuário</a></li>
+                <li><a href="http://localhost:5500/public/lista_usuario.html">Lista de Usuário</a></li>
+                <li><a href="#">Vendas de Passagens</a>
+                    <ul>
+                        <li><a href="http://localhost:5500/public/vendas.html">Realizar Vendas</a></li>
+                        <li><a href="http://localhost:5500/public/listavendas.html">Listar Vendas</a></li>
+                    </ul>
+                </li>
+            </ul> 
+        </nav>
+    <br>
+    <h2 id="titulo-listar">Lista de Usuário</h2>
+    <div id="dtUsuario">
+        <table id="tdUsuario">
+            <thead>
+                <tr>
+                    <th>Nome</th>
+                    <th>Idade</th>
+                    <th>CPF Unit.</th>
+                    <th>Telefone</th>
+                </tr>
+            </thead>
+            
+            <tbody id="usuarios_cadastrados">
+            </tbody>
+            <a href="http://localhost:5500/public/menu.html"><button id="botao-adicionar">+ Adicionar</button></a>
+        </table>
+    </div>
+    <div class="content">
+    </div>
+    <div id="dv-modal" class="modal">
+        <div class="modal-content">
+            <nav id="menu-editar">
+                <h2 id="titulo-editar">Editar Usuário</h2>
+            </nav>
+            <div>
+                <form id="form-editar">
+                    <div><label for="nome" class="requerido">Nome:</label></div>
+                    <br>
+                    <div><input type="name" required="requerido" placeholder="Digite seu nome" class="caixa" id="nome"></div> 
+                    <br>          
+                    <div><label for="idade" class="requerido">Idade:</label></div>  
+                    <br>  
+                    <div><input type="number" required="requerido" placeholder="Digite sua idade" class="caixa" id="idade"></div> 
+                    <br>   
+                    <div><label for="cpf" class="requerido">CPF:</label></div>
+                    <br>    
+                    <div><input type="text" required="requerido" placeholder="cpf" class="caixa" id="cpf"></div>    
+                    <br>
+                    <div><label for="telefone" class="requerido">Telefone:</label></div>
+                    <br>
+                    <div><input type="text" required="requerido" placeholder="telefone" class="caixa" id="telefone"></div>
+                    <br>
+                    <input type="submit" value="Atualizar" id="botao-atualizar">  
+                    <input type="button" value="Fechar" class="btnFechar" onclick="closeModal()"> 
+                </form>
+           </div>
+        </div>
+    </div>
+
+
+    <div class="content_confimacao">
+    </div>
+    <div id="dv-modal_confirmacao" class="modal_confirmacao">
+        <div class="modal-content-confirmacao">
+            <div class="popup">
+                <h3 id="texto-confirmacao">Deseja confirmar a exclusão?</h3>
+                <input type="submit" value="SIM" id="botao-sim">
+                <input type="button" value="NÃO" id="botao-nao" onclick="closeModalConfirmacao()">
+            </div>
+        </div>
+    </div>
+    <footer>
+        <div class="rodape">
+            © 2021 - My Bus. Todos os Direitos Reservados<br>
+            <a href="https://github.com/felipegt56">Github - João Felipe</a>
+        </div>
+    </footer>
+</body>
+</html>
